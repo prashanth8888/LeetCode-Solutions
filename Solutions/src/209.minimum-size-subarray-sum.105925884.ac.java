@@ -1,0 +1,19 @@
+public class Solution {
+    public int minSubArrayLen(int s, int[] nums) {
+        
+        int i = 0, j = 0, min = Integer.MAX_VALUE, sum = 0;
+        while(j < nums.length){
+            
+            sum += nums[j++];
+            if(sum >= s){
+                 while(sum >= s && i < j){
+                    //System.out.println("Loop decrements " + i + "Sum" + sum);
+                    sum -= nums[i++];
+                    min = Math.min(min, j-i + 1);
+                }
+            }
+        }
+        
+        return min == Integer.MAX_VALUE? 0 : min;
+    }
+}
