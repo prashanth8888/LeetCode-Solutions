@@ -5,11 +5,7 @@ class Solution {
         int start = 0, end = people.length - 1;
         int numberOfBoats = 0;
         
-        while(start <= end){
-            if(start == end){
-                numberOfBoats++;
-                break;
-            } 
+        while(start <= end){ 
             if(people[start] + people[end] <= limit){
                 numberOfBoats++;   
                 start++;
@@ -23,4 +19,4 @@ class Solution {
         return numberOfBoats;
         
     }
-}a
+}
